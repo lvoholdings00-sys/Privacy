@@ -4,6 +4,12 @@
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Privacy Policy · LVO Holdings</title>
+  <meta name="description" content="Privacy Policy describing how LVO Holdings collects, uses, and protects personal information at wearelvo.com, including Texas Data Privacy and Security Act (TDPSA) rights."/>
+  <meta name="robots" content="noindex, follow"/>
+  <meta property="og:title" content="Privacy Policy · LVO Holdings"/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:url" content="https://privacy.wearelvo.com/"/>
+  <link rel="canonical" href="https://privacy.wearelvo.com/"/>
   <link rel="icon" type="image/png" href="assets/logo.png">
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
@@ -19,6 +25,10 @@
       --bg:     #000000;
     }
     html { scroll-behavior: smooth; }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      * { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
+    }
     body {
       background: var(--bg);
       color: var(--white);
@@ -34,6 +44,26 @@
       opacity: 0.03;
       pointer-events: none;
       z-index: 9999;
+    }
+
+    .skip-link {
+      position: absolute;
+      top: -60px; left: 1rem;
+      background: var(--red);
+      color: var(--white);
+      padding: 0.6rem 1rem;
+      font-family: 'Cinzel', serif;
+      font-size: 0.6rem;
+      letter-spacing: 0.15em;
+      text-decoration: none;
+      z-index: 200;
+      transition: top 0.2s;
+    }
+    .skip-link:focus { top: 1rem; }
+
+    a:focus-visible, button:focus-visible {
+      outline: 1px solid var(--red-hi);
+      outline-offset: 3px;
     }
 
     /* NAV */
@@ -67,7 +97,7 @@
       align-items: center;
       gap: 0.5rem;
     }
-    .nav-back:hover { color: var(--white); }
+    .nav-back:hover, .nav-back:focus-visible { color: var(--white); }
     .nav-back-arrow { color: var(--red-hi); }
 
     /* PAGE HEADER */
@@ -110,12 +140,46 @@
       letter-spacing: 0.3em;
       color: var(--dim);
     }
+    .page-date span { color: var(--chrome); }
     .header-rule {
       width: 1px;
       height: 50px;
       background: linear-gradient(to bottom, transparent, var(--red-hi), transparent);
       margin: 3rem auto 0;
     }
+
+    /* TOC */
+    .toc {
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+    .toc-inner {
+      border: 0.5px solid rgba(139,0,0,0.2);
+      padding: 1.6rem 1.8rem;
+    }
+    .toc-label {
+      font-family: 'Cinzel', serif;
+      font-size: 0.5rem;
+      letter-spacing: 0.35em;
+      color: var(--red-hi);
+      text-transform: uppercase;
+      display: block;
+      margin-bottom: 1rem;
+    }
+    .toc-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.6rem 2rem;
+    }
+    .toc-grid a {
+      font-size: 0.85rem;
+      font-style: italic;
+      color: var(--dim);
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+    .toc-grid a:hover, .toc-grid a:focus-visible { color: var(--chrome); }
 
     /* CONTENT */
     .policy-wrap {
@@ -152,8 +216,12 @@
       opacity: 0;
       transform: translateY(20px);
       transition: opacity 0.8s cubic-bezier(0.16,1,0.3,1), transform 0.8s cubic-bezier(0.16,1,0.3,1);
+      scroll-margin-top: 6rem;
     }
     .policy-section.visible { opacity: 1; transform: translateY(0); }
+    @media (prefers-reduced-motion: reduce) {
+      .policy-section { opacity: 1; transform: none; }
+    }
 
     .section-num {
       font-family: 'Cinzel', serif;
@@ -219,6 +287,38 @@
       font-style: normal;
     }
 
+    /* TABLE (cookies) */
+    .data-table {
+      margin-top: 1.4rem;
+      border: 0.5px solid rgba(139,0,0,0.15);
+      overflow-x: auto;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 480px;
+    }
+    th, td {
+      text-align: left;
+      padding: 0.9rem 1.2rem;
+      font-size: 0.88rem;
+      font-weight: 300;
+      font-style: italic;
+      color: var(--dim);
+      border-bottom: 0.5px solid rgba(139,0,0,0.1);
+      line-height: 1.6;
+    }
+    tr:last-child td { border-bottom: none; }
+    th {
+      font-family: 'Cinzel', serif;
+      font-size: 0.5rem;
+      letter-spacing: 0.15em;
+      font-style: normal;
+      color: var(--red-hi);
+      text-transform: uppercase;
+      border-bottom: 0.5px solid rgba(139,0,0,0.25);
+    }
+
     /* INTRO QUOTE */
     .intro-quote {
       text-align: center;
@@ -273,7 +373,7 @@
       padding-bottom: 0.3rem;
       transition: color 0.3s, border-color 0.3s;
     }
-    .contact-block-email:hover { color: var(--white); border-color: var(--red-hi); }
+    .contact-block-email:hover, .contact-block-email:focus-visible { color: var(--white); border-color: var(--red-hi); }
 
     /* FOOTER */
     footer {
@@ -291,6 +391,23 @@
       letter-spacing: 0.3em;
       color: var(--dim);
     }
+    .footer-center {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+    }
+    .footer-link {
+      font-family: 'Cinzel', serif;
+      font-size: 0.5rem;
+      letter-spacing: 0.2em;
+      color: rgba(136,136,128,0.5);
+      text-decoration: none;
+      text-transform: uppercase;
+      border-bottom: 0.5px solid rgba(139,0,0,0.25);
+      padding-bottom: 0.15rem;
+      transition: color 0.3s, border-color 0.3s;
+    }
+    .footer-link:hover, .footer-link:focus-visible { color: var(--red-hi); border-color: var(--red-hi); }
     .footer-copy {
       font-family: 'Cinzel', serif;
       font-size: 0.5rem;
@@ -303,17 +420,20 @@
       nav { padding: 1.2rem 1.2rem; }
       .page-header { padding: 10rem 1.2rem 4rem; }
       .policy-wrap { padding: 3rem 1.2rem 6rem; }
+      .toc-grid { grid-template-columns: 1fr; }
       .contact-block { flex-direction: column; text-align: center; }
       footer { flex-direction: column; align-items: center; text-align: center; }
+      .footer-center { flex-direction: column; gap: 0.6rem; }
     }
   </style>
 </head>
 <body>
+  <a class="skip-link" href="#main">Skip to content</a>
   <div class="page">
     <nav>
       <a class="nav-mark" href="https://wearelvo.com/">LVO</a>
       <a class="nav-back" href="https://wearelvo.com/">
-        <span class="nav-back-arrow">←</span>
+        <span class="nav-back-arrow" aria-hidden="true">←</span>
         <span>Return</span>
       </a>
     </nav>
@@ -321,11 +441,30 @@
     <header class="page-header">
       <span class="page-eyebrow">Legal · Transparency</span>
       <h1 class="page-title">Privacy Policy</h1>
-      <p class="page-date">Effective Date: May 3, 2026</p>
+      <p class="page-date">Effective <span>May 3, 2026</span> &nbsp;·&nbsp; Last Reviewed <span>August 4, 2026</span></p>
       <div class="header-rule"></div>
     </header>
 
-    <main class="policy-wrap">
+    <nav class="toc" aria-label="Table of contents">
+      <div class="toc-inner">
+        <span class="toc-label">On This Page</span>
+        <div class="toc-grid">
+          <a href="#philosophy">01 · Our Philosophy</a>
+          <a href="#collect">02 · Information We Collect</a>
+          <a href="#cookies">03 · Cookies & Tracking</a>
+          <a href="#use">04 · Use of Information</a>
+          <a href="#sale">05 · No Sale of Data</a>
+          <a href="#retention">06 · Data Retention</a>
+          <a href="#sensitive">07 · Sensitive Data & Minors</a>
+          <a href="#rights">08 · Your Texas Privacy Rights</a>
+          <a href="#optout">09 · Universal Opt-Out</a>
+          <a href="#contact">10 · Contact & Requests</a>
+          <a href="#security">11 · Data Security</a>
+        </div>
+      </div>
+    </nav>
+
+    <main class="policy-wrap" id="main">
 
       <div class="intro-quote policy-section">
         <p>LVO Holdings operates as a <em>private correspondence</em> organization.<br/>
@@ -334,86 +473,135 @@
 
       <div class="section-divider"><span>The Framework</span></div>
 
-      <div class="policy-section">
+      <div class="policy-section" id="philosophy">
         <span class="section-num">01</span>
-        <p class="section-title">Our Privacy Philosophy</p>
+        <h2 class="section-title">Our Privacy Philosophy</h2>
         <div class="section-body">
-          <p>LVO Holdings (Legion V · Omni-Operations) is a Houston-based organization dedicated to real estate acquisition, social infrastructure, and strategic capital ventures. Our digital presence at <strong>wearelvo.com</strong> is an informational gateway designed for private correspondence and the evaluation of strategic partnerships.</p>
+          <p>LVO Holdings (Legion V · Omni-Operations) is a Houston-based organization dedicated to real estate acquisition, social infrastructure, and strategic capital ventures. Our digital presence at <strong>wearelvo.com</strong> is an informational gateway designed for private correspondence and the evaluation of strategic partnerships. This Policy applies to that gateway and its subdomains; it does not apply to the separately governed client and program records of our licensed operating divisions.</p>
           <p>We do not engage in public-facing advertising or e-commerce. We do not collect payment card information, billing addresses, or consumer shopping histories. Access is earned, not given — and the same principle governs your data.</p>
         </div>
       </div>
 
-      <div class="policy-section">
+      <div class="policy-section" id="collect">
         <span class="section-num">02</span>
-        <p class="section-title">Information We Collect</p>
+        <h2 class="section-title">Information We Collect</h2>
         <div class="section-body">
           <p>We limit our data collection to what is adequate, relevant, and reasonably necessary for our disclosed operations.</p>
           <p><strong>Voluntary Inquiries:</strong> When you contact us via our Private Inquiries email or external connection portals, we collect the personal information you voluntarily provide — such as your name, business affiliation, and contact details.</p>
-          <p><strong>Administrative Log Data:</strong> Our hosting provider automatically collects basic metadata, such as IP addresses and access timestamps, to ensure site security and functionality.</p>
+          <p><strong>Administrative Log Data:</strong> Our hosting and security provider automatically collects basic metadata, such as IP addresses, browser type, and access timestamps, to ensure site security and functionality.</p>
         </div>
       </div>
 
-      <div class="policy-section">
+      <div class="policy-section" id="cookies">
         <span class="section-num">03</span>
-        <p class="section-title">Use of Your Personal Information</p>
+        <h2 class="section-title">Cookies & Tracking Technologies</h2>
+        <div class="section-body">
+          <p>We keep third-party technology on this Site to a minimum. The following services may process limited technical data when you visit:</p>
+        </div>
+        <div class="data-table">
+          <table>
+            <thead>
+              <tr><th scope="col">Provider</th><th scope="col">Purpose</th><th scope="col">Data Involved</th></tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Google Fonts</td>
+                <td>Loads our typography (Cinzel, Cormorant Garamond)</td>
+                <td>IP address, browser metadata (per Google's privacy policy)</td>
+              </tr>
+              <tr>
+                <td>Cloudflare (hosting, security & web analytics)</td>
+                <td>Delivers the Site, guards against abuse, and provides aggregate, cookie-free visit analytics</td>
+                <td>IP address, request metadata</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="section-body">
+          <p style="margin-top: 1rem;">We do not use advertising cookies, third-party marketing pixels, or cross-site tracking. Where a browser add-on or setting blocks these requests, the Site will generally continue to function.</p>
+        </div>
+      </div>
+
+      <div class="policy-section" id="use">
+        <span class="section-num">04</span>
+        <h2 class="section-title">Use of Your Personal Information</h2>
         <div class="section-body">
           <p>We process your information exclusively to facilitate the earned access and private correspondence models of our organization. This includes evaluating potential partnerships within our three pillars:</p>
           <p><strong>Vindex</strong> · Real Estate &nbsp;·&nbsp; <strong>Operations</strong> · Social Services &nbsp;·&nbsp; <strong>Alliance</strong> · Strategic Partnerships</p>
-          <p>We do not use your personal information for targeted advertising or automated profiling.</p>
+          <p>We do not use your personal information for targeted advertising or automated profiling that produces legal or similarly significant effects.</p>
         </div>
       </div>
 
       <div class="section-divider"><span>Data & Rights</span></div>
 
-      <div class="policy-section">
-        <span class="section-num">04</span>
-        <p class="section-title">No Sale of Personal Data</p>
+      <div class="policy-section" id="sale">
+        <span class="section-num">05</span>
+        <h2 class="section-title">No Sale of Personal Data</h2>
         <div class="section-body">
           <p>LVO Holdings does not sell your personal data. We define "sale" as the sharing or transferring of personal data to a third party for monetary or other valuable consideration. We only disclose information to:</p>
-          <p><strong>Vetted Processors:</strong> Service providers who assist in our technical operations (e.g., email hosting) and are contractually bound to maintain your data's confidentiality.</p>
-          <p><strong>Legal Mandates:</strong> Authorities where disclosure is required to comply with a legal proceeding or protect the legal rights of LVO Holdings.</p>
+          <p><strong>Vetted Processors:</strong> Service providers who assist in our technical operations (e.g., email hosting, site infrastructure) and are contractually bound to maintain your data's confidentiality.</p>
+          <p><strong>Legal Mandates:</strong> Authorities where disclosure is required to comply with a legal proceeding or protect the legal rights, safety, or property of LVO Holdings or others.</p>
+          <p><strong>Corporate Transactions:</strong> A successor entity in connection with a merger, acquisition, or sale of assets, subject to this Policy or a materially equivalent one.</p>
         </div>
       </div>
 
-      <div class="policy-section">
-        <span class="section-num">05</span>
-        <p class="section-title">Sensitive Data & Children</p>
-        <div class="section-body">
-          <p>We do not process sensitive personal data — such as health, ethnic, or religious information — or biometric data without your prior, affirmative consent. Our website is not intended for use by children under 13, and we do not knowingly collect personal data from children.</p>
-        </div>
-      </div>
-
-      <div class="policy-section">
+      <div class="policy-section" id="retention">
         <span class="section-num">06</span>
-        <p class="section-title">Your Texas Privacy Rights</p>
+        <h2 class="section-title">Data Retention</h2>
+        <div class="section-body">
+          <p>We retain personal information collected through voluntary inquiries only as long as reasonably necessary to evaluate and respond to that inquiry, maintain business records, or comply with legal, accounting, or reporting obligations. Administrative log data is retained for a limited period consistent with our security and hosting provider's standard practices, after which it is deleted or aggregated.</p>
+        </div>
+      </div>
+
+      <div class="policy-section" id="sensitive">
+        <span class="section-num">07</span>
+        <h2 class="section-title">Sensitive Data & Minors</h2>
+        <div class="section-body">
+          <p>We do not process sensitive personal data — such as health, ethnic, or religious information — or biometric data without your prior, affirmative consent. This gateway Site is intended for business and professional correspondence and is not directed to individuals under 18. We do not knowingly collect personal data from minors through this Site; if we learn we have done so, we will delete it. This is separate from, and does not limit, the heightened confidentiality protections that apply to program participants under our licensed social-services operations.</p>
+        </div>
+      </div>
+
+      <div class="policy-section" id="rights">
+        <span class="section-num">08</span>
+        <h2 class="section-title">Your Texas Privacy Rights</h2>
         <div class="section-body">
           <p>Under the Texas Data Privacy and Security Act (TDPSA), Texas residents have the following rights regarding their personal data:</p>
           <ul class="rights-list">
             <li><strong>Right of Access:</strong> To confirm if we are processing your data and to obtain a copy in a portable format.</li>
             <li><strong>Right of Correction:</strong> To rectify inaccuracies in the personal data we hold about you.</li>
             <li><strong>Right of Deletion:</strong> To request that we delete data you have provided or that we have obtained about you.</li>
-            <li><strong>Right to Opt-Out:</strong> To opt-out of the processing of your data for sales or profiling, should such activities ever occur.</li>
+            <li><strong>Right to Opt-Out:</strong> To opt-out of the processing of your data for sales, targeted advertising, or certain profiling, should such activities ever occur.</li>
+            <li><strong>Right of Non-Discrimination:</strong> We will not deny you goods or services, charge different prices, or provide a different level of service because you exercised a privacy right.</li>
           </ul>
         </div>
       </div>
 
-      <div class="policy-section">
-        <span class="section-num">07</span>
-        <p class="section-title">Contact & Requests</p>
+      <div class="policy-section" id="optout">
+        <span class="section-num">09</span>
+        <h2 class="section-title">Universal Opt-Out Mechanisms</h2>
         <div class="section-body">
-          <p>To exercise these rights, please contact us at our protected inquiry address. We will respond to authenticated requests within 45 days. If a request is denied, you have the right to appeal via the same address; if unsuccessful, you may submit a complaint to the Texas Attorney General.</p>
-        </div>
-        <div class="contact-block">
-          <span class="contact-block-label">Private Inquiries</span>
-          <a class="contact-block-email" href="mailto:info@wearelvo.com">info@wearelvo.com</a>
+          <p>Because we do not sell personal data or serve targeted advertising, there is currently no opt-out process to activate. If that changes, we will honor legally recognized universal opt-out signals (such as the Global Privacy Control) from browsers that support them, in accordance with the TDPSA.</p>
         </div>
       </div>
 
-      <div class="policy-section">
-        <span class="section-num">08</span>
-        <p class="section-title">Data Security</p>
+      <div class="policy-section" id="contact">
+        <span class="section-num">10</span>
+        <h2 class="section-title">Contact & Requests</h2>
         <div class="section-body">
-          <p>We implement reasonable technical and administrative measures, including encryption and access controls, to protect your data. However, as our site is used for private correspondence, the transmission of personal information is done at your own risk.</p>
+          <p>To exercise these rights, please contact us at our protected inquiry address. We will authenticate your request and respond within 45 days, with one 45-day extension where reasonably necessary. If a request is denied, you have the right to appeal via the same address within a reasonable time; if the appeal is unsuccessful, you may submit a complaint to the Texas Attorney General.</p>
+        </div>
+        <div class="contact-block">
+          <span class="contact-block-label">Private Inquiries</span>
+          <a class="contact-block-email" href="mailto:inquiries@wearelvo.com">inquiries@wearelvo.com</a>
+        </div>
+      </div>
+
+      <div class="policy-section" id="security">
+        <span class="section-num">11</span>
+        <h2 class="section-title">Data Security & Changes to This Policy</h2>
+        <div class="section-body">
+          <p>We implement reasonable technical and administrative measures, including encryption in transit and access controls, to protect your data. However, as our site is used for private correspondence, the transmission of personal information is done at your own risk, and no method of transmission or storage is completely secure.</p>
+          <p>We may update this Policy from time to time. Material changes will be reflected by a new "Last Reviewed" date above; continued use of the Site after an update constitutes acceptance of the revised Policy.</p>
         </div>
       </div>
 
@@ -421,21 +609,30 @@
 
     <footer>
       <span class="footer-mark">LVO Holdings</span>
-      <span class="footer-copy">&copy; 2026 LVO Family Legacy Trust · All Rights Reserved</span>
+      <div class="footer-center">
+        <a class="footer-link" href="https://wearelvo.com/terms">Terms of Service</a>
+        <a class="footer-link" href="https://privacy.wearelvo.com/">Privacy Policy</a>
+        <span class="footer-copy">&copy; 2026 LVO Family Legacy Trust · All Rights Reserved</span>
+      </div>
     </footer>
   </div>
 
   <script>
     const sections = document.querySelectorAll('.policy-section');
-    const obs = new IntersectionObserver((entries) => {
-      entries.forEach((e, i) => {
-        if (e.isIntersecting) {
-          e.target.classList.add('visible');
-          obs.unobserve(e.target);
-        }
-      });
-    }, { threshold: 0.08 });
-    sections.forEach(s => obs.observe(s));
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (reduceMotion) {
+      sections.forEach(s => s.classList.add('visible'));
+    } else {
+      const obs = new IntersectionObserver((entries) => {
+        entries.forEach((e) => {
+          if (e.isIntersecting) {
+            e.target.classList.add('visible');
+            obs.unobserve(e.target);
+          }
+        });
+      }, { threshold: 0.08 });
+      sections.forEach(s => obs.observe(s));
+    }
   </script>
 </body>
 </html>
