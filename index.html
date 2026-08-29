@@ -1,130 +1,452 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Privacy Policy · LVO Holdings</title>
-  <link rel="icon" type="image/png" href="assets/logo.png">
-  <link rel="preconnect" href="https://fonts.googleapis.com"/>
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;900&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet"/>
-  <style>
-    *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
-    :root{--red:#8B0000;--red-hi:#CC2020;--chrome:#C8C8D0;--white:#F0EEEC;--dim:#888880;--bg:#000000}
-    body{background:var(--bg);color:var(--white);font-family:'Cormorant Garamond',Georgia,serif}
-    .page{max-width:760px;margin:0 auto;padding:0 2rem}
-    nav{padding:1.8rem 0;display:flex;justify-content:space-between;align-items:center;border-bottom:.5px solid rgba(204,32,32,.15)}
-    .nav-back{font-family:'Cinzel',serif;font-size:.48rem;letter-spacing:.35em;color:var(--red-hi);text-decoration:none;text-transform:uppercase}
-    .nav-back:hover{color:var(--chrome)}
-    .updated{font-family:'Cinzel',serif;font-size:.46rem;letter-spacing:.2em;color:var(--dim);text-transform:uppercase}
-    header{padding:4rem 0 2rem}
-    .eyebrow{font-family:'Cinzel',serif;font-size:.52rem;letter-spacing:.5em;color:var(--red-hi);text-transform:uppercase;margin-bottom:1rem}
-    h1{font-family:'Cinzel',serif;font-size:clamp(1.8rem,5vw,2.6rem);font-weight:900;letter-spacing:.08em;color:var(--chrome)}
-    main{padding-bottom:6rem}
-    section{padding:2.2rem 0;border-bottom:.5px solid rgba(200,200,208,.08)}
-    section:last-child{border-bottom:none}
-    h2{font-family:'Cinzel',serif;font-size:.72rem;font-weight:600;letter-spacing:.2em;color:var(--red-hi);text-transform:uppercase;margin-bottom:1rem}
-    p{font-size:1rem;font-weight:300;line-height:1.85;color:var(--chrome);margin-bottom:.9rem}
-    p:last-child{margin-bottom:0}
-    ul{padding-left:1.4rem;margin-bottom:.9rem}
-    li{font-size:1rem;font-weight:300;line-height:1.85;color:var(--chrome);margin-bottom:.4rem}
-    table{width:100%;border-collapse:collapse;margin:1rem 0}
-    th,td{text-align:left;padding:.6rem .8rem .6rem 0;font-size:.92rem;font-weight:300;color:var(--chrome);border-bottom:.5px solid rgba(200,200,208,.1)}
-    th{font-family:'Cinzel',serif;font-size:.6rem;letter-spacing:.12em;color:var(--dim);text-transform:uppercase}
-    a.inline{color:var(--red-hi);text-decoration:none}
-    a.inline:hover{text-decoration:underline}
-    footer{padding:2.5rem 0;border-top:.5px solid rgba(204,32,32,.15);display:flex;justify-content:space-between;flex-wrap:wrap;gap:.8rem}
-    .footer-link{font-family:'Cinzel',serif;font-size:.48rem;letter-spacing:.25em;color:var(--dim);text-decoration:none;text-transform:uppercase}
-    .footer-link:hover{color:var(--red-hi)}
-    @media(max-width:600px){.page{padding:0 1.2rem}table,th,td{font-size:.82rem}}
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Privacy Policy · LVO Holdings</title>
+<meta name="description" content="LVO Holdings Privacy Policy — how Legion V. Omni-Operation Holdings LLC and its divisions collect, use, and protect information, including Texas Data Privacy and Security Act (TDPSA) disclosures.">
+<link rel="icon" type="image/png" href="assets/logo.png">
+<link href="https://fonts.googleapis.com/css2?family=IM+Fell+English:ital@0;1&family=Cinzel:wght@400;600;900&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300&family=Cormorant+SC:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+:root{
+  --white:#fff;
+  --dim:rgba(255,255,255,0.7);
+  --dimmer:rgba(255,255,255,0.45);
+  --dimmest:rgba(255,255,255,0.25);
+  --purple:#7F77DD;
+  --red-hi:#CC2020;
+  --chrome:#C8C8D0;
+  --panel-bg:rgba(255,255,255,0.02);
+  --panel-border:rgba(139,0,0,0.28);
+  --rule:rgba(255,255,255,0.12);
+}
+html{scroll-behavior:smooth;}
+body{
+  background:#050505;
+  color:var(--dim);
+  font-family:'Cormorant Garamond',Georgia,serif;
+  font-weight:300;
+  line-height:1.85;
+  min-height:100vh;
+}
+a{color:var(--chrome);}
+::selection{background:rgba(204,32,32,0.35);color:#fff;}
+
+/* ---------- Top bar ---------- */
+#topbar{
+  position:sticky;top:0;z-index:50;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:clamp(14px,3vw,22px) clamp(18px,5vw,48px);
+  background:rgba(5,5,5,0.82);
+  backdrop-filter:blur(10px);
+  border-bottom:0.5px solid var(--rule);
+}
+#topbar .mark{
+  font-family:'Cinzel',serif;font-weight:900;letter-spacing:.32em;
+  font-size:clamp(13px,2vw,16px);color:var(--white);text-decoration:none;
+  display:flex;align-items:center;gap:14px;
+}
+#topbar .mark span.sub{
+  font-family:'Cormorant SC',serif;font-weight:400;letter-spacing:.25em;
+  font-size:.6rem;color:var(--dimmest);text-transform:uppercase;
+  display:none;
+}
+@media(min-width:640px){ #topbar .mark span.sub{ display:inline; } }
+#topbar nav{display:flex;gap:clamp(14px,3vw,28px);align-items:center;}
+#topbar nav a{
+  font-family:'Cinzel',serif;font-size:.62rem;letter-spacing:.22em;
+  text-transform:uppercase;text-decoration:none;color:var(--dimmer);
+  border-bottom:0.5px solid transparent;padding-bottom:3px;
+  transition:color .3s,border-color .3s;
+}
+#topbar nav a:hover,#topbar nav a.current{ color:var(--white); border-color:var(--red-hi); }
+
+/* ---------- Hero ---------- */
+#hero{
+  padding:clamp(56px,10vw,110px) clamp(18px,6vw,48px) clamp(30px,6vw,56px);
+  max-width:900px;margin:0 auto;text-align:center;
+}
+#hero .eyebrow{
+  font-family:'Cinzel',serif;font-size:.66rem;letter-spacing:.42em;
+  color:var(--red-hi);text-transform:uppercase;margin-bottom:1.4rem;
+}
+#hero h1{
+  font-family:'IM Fell English',Georgia,serif;font-style:italic;font-weight:400;
+  font-size:clamp(34px,6vw,58px);color:var(--white);line-height:1.15;margin-bottom:1.2rem;
+}
+#hero .meta{
+  font-family:'Cinzel',serif;font-size:.62rem;letter-spacing:.2em;
+  color:var(--dimmest);text-transform:uppercase;
+}
+#hero .meta strong{ color:var(--chrome); font-weight:600; }
+#hero .rule{
+  width:1px;height:52px;margin:1.8rem auto 0;
+  background:linear-gradient(to bottom,transparent,var(--red-hi),transparent);
+}
+
+/* ---------- Layout ---------- */
+#layout{
+  max-width:1180px;margin:0 auto;
+  display:grid;grid-template-columns:280px minmax(0,1fr);gap:clamp(24px,4vw,60px);
+  padding:0 clamp(18px,6vw,48px) clamp(60px,10vw,120px);
+}
+@media(max-width:900px){ #layout{ grid-template-columns:1fr; } }
+
+/* ---------- TOC ---------- */
+#toc{
+  position:sticky;top:96px;align-self:start;
+  border:0.5px solid var(--panel-border);background:var(--panel-bg);
+  padding:1.6rem 1.5rem;
+}
+@media(max-width:900px){ #toc{ position:relative;top:0; margin-bottom:1rem; } }
+#toc .toc-label{
+  font-family:'Cinzel',serif;font-size:.6rem;letter-spacing:.3em;
+  color:var(--dimmest);text-transform:uppercase;margin-bottom:1rem;
+}
+#toc ol{list-style:none;counter-reset:toc;}
+#toc li{counter-increment:toc;margin-bottom:.65rem;}
+#toc li a{
+  display:flex;gap:.6rem;text-decoration:none;color:var(--dimmer);
+  font-size:.92rem;line-height:1.4;transition:color .25s;
+}
+#toc li a::before{
+  content:counter(toc);
+  font-family:'Cinzel',serif;font-size:.68rem;color:var(--red-hi);
+  min-width:1.4em;
+}
+#toc li a:hover{ color:var(--white); }
+
+/* ---------- Article ---------- */
+article section{
+  padding-bottom:clamp(28px,4vw,44px);
+  margin-bottom:clamp(28px,4vw,44px);
+  border-bottom:0.5px solid var(--rule);
+}
+article section:last-child{ border-bottom:none; }
+article h2{
+  font-family:'IM Fell English',Georgia,serif;font-style:italic;font-weight:400;
+  font-size:clamp(24px,3.2vw,32px);color:var(--white);margin-bottom:1rem;
+  display:flex;align-items:baseline;gap:.7rem;
+}
+article h2 .num{
+  font-family:'Cinzel',serif;font-style:normal;font-size:.62rem;
+  letter-spacing:.15em;color:var(--red-hi);
+}
+article h3{
+  font-family:'Cinzel',serif;font-weight:600;font-size:.82rem;letter-spacing:.08em;
+  color:var(--chrome);text-transform:uppercase;margin:1.4rem 0 .7rem;
+}
+article p{ margin-bottom:1rem;font-size:1.02rem; color:var(--dim); }
+article p.lede{ color:var(--dimmer); font-style:italic; }
+article ul,article ol{ margin:0 0 1.1rem 1.3rem; }
+article ul li,article ol li{ margin-bottom:.55rem;font-size:1.02rem;color:var(--dim); }
+article strong{ color:var(--white); font-weight:600; }
+article a.inline{ color:var(--purple); text-decoration:underline; text-underline-offset:3px; }
+
+table.data-table{ width:100%; border-collapse:collapse; margin:1rem 0 1.4rem; font-size:.95rem; }
+table.data-table th,table.data-table td{
+  border:0.5px solid var(--rule); padding:.7rem .9rem; text-align:left; vertical-align:top;
+}
+table.data-table th{
+  font-family:'Cinzel',serif;font-size:.62rem;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--chrome);background:rgba(255,255,255,0.03);
+}
+table.data-table td{ color:var(--dim); }
+
+.callout{
+  border-left:2px solid var(--red-hi);
+  background:rgba(204,32,32,0.06);
+  padding:1rem 1.3rem;margin:1.2rem 0;
+}
+.callout p{ margin-bottom:0; color:var(--dimmer); font-size:.95rem; }
+
+.division-grid{ display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;margin:1rem 0 1.4rem; }
+.division-card{ border:0.5px solid var(--rule);padding:1.1rem 1.2rem; }
+.division-card .d-name{
+  font-family:'Cinzel',serif;font-size:.72rem;letter-spacing:.16em;
+  text-transform:uppercase;margin-bottom:.5rem;
+}
+.division-card p{ font-size:.9rem;margin-bottom:0;color:var(--dimmer); }
+.division-card.vindex .d-name{ color:#C6A15B; }
+.division-card.alliance .d-name{ color:#7F77DD; }
+.division-card.operations .d-name{ color:#1D9E75; }
+.division-card.careers .d-name{ color:var(--chrome); }
+
+/* ---------- Footer ---------- */
+footer{
+  border-top:0.5px solid var(--rule);
+  padding:clamp(28px,5vw,44px) clamp(18px,6vw,48px);
+  display:flex;flex-wrap:wrap;gap:1.4rem 2rem;align-items:center;justify-content:space-between;
+}
+footer .fmark{
+  font-family:'Cinzel',serif;font-size:.62rem;letter-spacing:.28em;color:var(--dimmest);
+  text-transform:uppercase;
+}
+footer .flinks{ display:flex;gap:1.6rem;flex-wrap:wrap; }
+footer .flinks a{
+  font-family:'Cinzel',serif;font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--dimmer);text-decoration:none;border-bottom:0.5px solid rgba(139,0,0,0.3);
+  padding-bottom:2px;transition:color .3s,border-color .3s;
+}
+footer .flinks a:hover{ color:var(--white); border-color:var(--red-hi); }
+
+::-webkit-scrollbar{ width:8px; }
+::-webkit-scrollbar-track{ background:#050505; }
+::-webkit-scrollbar-thumb{ background:rgba(139,0,0,0.35); }
+</style>
 </head>
 <body>
-<div class="page">
+
+<div id="topbar">
+  <a class="mark" href="https://wearelvo.com/">LVO <span class="sub">Legion V. Omni-Operations</span></a>
   <nav>
-    <a class="nav-back" href="https://wearelvo.com">← LVO Holdings</a>
-    <span class="updated">Last Updated · August 6, 2026</span>
+    <a href="https://wearelvo.com/">Home</a>
+    <a href="https://privacy.wearelvo.com" class="current">Privacy</a>
+    <a href="https://tos.wearelvo.com">Terms</a>
+  </nav>
+</div>
+
+<header id="hero">
+  <div class="eyebrow">Privacy Policy</div>
+  <h1>How LVO Holdings Handles Your Information</h1>
+  <div class="meta">Effective <strong>August 28, 2026</strong> &nbsp;·&nbsp; Last Reviewed <strong>August 28, 2026</strong></div>
+  <div class="rule"></div>
+</header>
+
+<div id="layout">
+
+  <nav id="toc" aria-label="Table of contents">
+    <div class="toc-label">On This Page</div>
+    <ol>
+      <li><a href="#scope">Scope &amp; Who We Are</a></li>
+      <li><a href="#collect">Information We Collect</a></li>
+      <li><a href="#sources">How We Collect It</a></li>
+      <li><a href="#use">How We Use Information</a></li>
+      <li><a href="#legal-basis">Legal Bases for Processing</a></li>
+      <li><a href="#cookies">Cookies &amp; Tracking Technologies</a></li>
+      <li><a href="#sharing">How We Share Information</a></li>
+      <li><a href="#processors">Third-Party Service Providers</a></li>
+      <li><a href="#divisions">Division-Specific Practices</a></li>
+      <li><a href="#retention">Data Retention</a></li>
+      <li><a href="#security">Data Security</a></li>
+      <li><a href="#rights">Your Privacy Rights</a></li>
+      <li><a href="#tdpsa">Texas Data Privacy &amp; Security Act</a></li>
+      <li><a href="#dnt">Do Not Track &amp; Global Opt-Out Signals</a></li>
+      <li><a href="#children">Children's Privacy</a></li>
+      <li><a href="#transfers">International Users &amp; Data Transfers</a></li>
+      <li><a href="#thirdparty-links">Third-Party Links</a></li>
+      <li><a href="#changes">Changes to This Policy</a></li>
+      <li><a href="#contact">Contact Us</a></li>
+    </ol>
   </nav>
 
-  <header>
-    <p class="eyebrow">Legal</p>
-    <h1>Privacy Policy</h1>
-  </header>
+  <article>
 
-  <main>
-    <section>
-      <h2>1. Overview</h2>
-      <p>This Privacy Policy explains how Legion V. Omni-Operation Holdings LLC ("LVO Holdings," "we," "us," or "our") collects, uses, and protects information across our public websites and member portals, including LVO Vindex, LVO Alliance, and LVO Operations.</p>
+    <section id="scope">
+      <h2><span class="num">01</span> Scope &amp; Who We Are</h2>
+      <p class="lede">This Privacy Policy explains how Legion V. Omni-Operation Holdings LLC, doing business as "LVO Holdings" or "LVO" ("we," "us," "our," or the "Company"), collects, uses, discloses, and safeguards information in connection with our websites, subdomains, applications, and related services (collectively, the "Services").</p>
+      <p>LVO Holdings is a privately held, Texas-based, multi-division operations group organized under the Marts Trust. This Policy applies to <strong>wearelvo.com</strong> and all of its subdomains and division portals, including but not limited to:</p>
+      <div class="division-grid">
+        <div class="division-card vindex"><div class="d-name">Vindex</div><p>Real estate operations, portfolio management, and related dashboards.</p></div>
+        <div class="division-card alliance"><div class="d-name">Alliance</div><p>Partnerships, capital formation, deal rooms, and investor-facing tools.</p></div>
+        <div class="division-card operations"><div class="d-name">Operations</div><p>Social services and General Residential Operation (GRO) administration, including Cool Living Quarters FC LLC.</p></div>
+        <div class="division-card careers"><div class="d-name">Careers</div><p>Recruiting, job postings, and applicant portals across LVO Holdings.</p></div>
+      </div>
+      <p>By accessing or using any part of the Services, you acknowledge that you have read and understood this Privacy Policy. If you do not agree with our practices, please do not use the Services. This Policy does not apply to information collected offline or through channels not owned or controlled by LVO Holdings, including third-party sites we may link to.</p>
     </section>
 
-    <section>
-      <h2>2. Information We Collect</h2>
-      <table>
-        <tr><th>Category</th><th>Examples</th><th>Source</th></tr>
-        <tr><td>Account information</td><td>Name, email address, authentication credentials</td><td>Provided by you via Clerk during sign-up</td></tr>
-        <tr><td>Portal activity</td><td>Member tier, session history, dashboard usage</td><td>Generated by portal use</td></tr>
-        <tr><td>Device &amp; usage data</td><td>IP address, browser type, pages visited</td><td>Automatically collected via Cloudflare Web Analytics</td></tr>
-        <tr><td>Communications</td><td>Messages you send us directly</td><td>Provided by you</td></tr>
+    <section id="collect">
+      <h2><span class="num">02</span> Information We Collect</h2>
+      <p>We collect information in three broad categories: information you provide directly, information collected automatically, and information we receive from third parties.</p>
+
+      <h3>Information You Provide Directly</h3>
+      <table class="data-table">
+        <tr><th>Category</th><th>Examples</th></tr>
+        <tr><td>Identity &amp; Contact Data</td><td>Full name, email address, phone number, mailing address, date of birth (where required for verification)</td></tr>
+        <tr><td>Account Credentials</td><td>Username, password (hashed, never stored in plaintext), authentication tokens managed via our identity provider</td></tr>
+        <tr><td>Professional &amp; Application Data</td><td>Résumés, cover letters, employment history, references, work authorization status (Careers portal)</td></tr>
+        <tr><td>Financial &amp; Transactional Data</td><td>Bank routing information, investment amounts, accreditation status, tax identification numbers (Alliance, Vindex — where applicable to a deal or transaction)</td></tr>
+        <tr><td>Correspondence</td><td>Messages, inquiries, and attachments submitted via contact forms, email, or in-portal messaging</td></tr>
+        <tr><td>Resident &amp; Program Data</td><td>Information relating to individuals served by Cool Living Quarters FC LLC under its HHSC General Residential Operation license, collected and safeguarded under separate program-specific confidentiality protocols described in Section 09</td></tr>
       </table>
-      <p>We do not knowingly collect government identification numbers, financial account details, or health information through these websites. Any such information exchanged as part of an actual business relationship (e.g., a partnership agreement or licensed care arrangement) is handled under separate written agreements, not through this site.</p>
-    </section>
 
-    <section>
-      <h2>3. How We Use Information</h2>
+      <h3>Information Collected Automatically</h3>
       <ul>
-        <li>To create and maintain your portal account and authenticate sign-ins;</li>
-        <li>To operate, secure, and improve the Services;</li>
-        <li>To communicate with you about your account or our divisions;</li>
-        <li>To detect, prevent, and respond to fraud, abuse, or security incidents;</li>
-        <li>To comply with legal obligations.</li>
+        <li><strong>Device &amp; Usage Data:</strong> IP address, browser type and version, operating system, device identifiers, referring/exit pages, pages viewed, time spent, and interaction patterns (e.g., clicks, scroll depth, carousel navigation).</li>
+        <li><strong>Log Data:</strong> Server logs maintained by our hosting and edge-network providers, including timestamps and request metadata.</li>
+        <li><strong>Cookie &amp; Local Storage Data:</strong> Including the <code>lvo_motion_consent</code> preference cookie, session and authentication cookies, and analytics identifiers. See Section 06.</li>
+        <li><strong>Approximate Location Data:</strong> Derived from IP address for fraud prevention, analytics, and content localization; we do not collect precise GPS location unless you separately grant permission.</li>
+      </ul>
+
+      <h3>Information From Third Parties</h3>
+      <ul>
+        <li>Identity verification and authentication data from our identity and access management provider.</li>
+        <li>Publicly available business and property records used in connection with Vindex real estate diligence.</li>
+        <li>Referral information when a current user, partner, or employee refers you to LVO Holdings.</li>
+        <li>Background and licensing verification data required for GRO staffing under 26 TAC Chapter 748, obtained from HHSC and authorized third-party screening vendors.</li>
       </ul>
     </section>
 
-    <section>
-      <h2>4. Third-Party Processors</h2>
-      <p>We rely on trusted infrastructure providers to operate the Services:</p>
+    <section id="sources">
+      <h2><span class="num">03</span> How We Collect It</h2>
+      <p>We collect information when you: create or log into an account; submit a form (contact, application, deal inquiry, or investor interest); communicate with us by email, phone, or in-portal messaging; browse our Services, including through cookies and similar technologies; or when a third party (such as a partner, vendor, or public record source) provides information to us in connection with a legitimate business purpose described in this Policy.</p>
+    </section>
+
+    <section id="use">
+      <h2><span class="num">04</span> How We Use Information</h2>
+      <p>We use the information we collect for the following purposes:</p>
       <ul>
-        <li><strong>Clerk</strong> — handles account authentication and session management for member portals;</li>
-        <li><strong>Cloudflare</strong> — provides hosting, security, and privacy-focused web analytics (cookieless where configured).</li>
+        <li><strong>Service Delivery:</strong> To create and maintain accounts, authenticate users, process applications, facilitate deal rooms, and operate division-specific portals.</li>
+        <li><strong>Communications:</strong> To respond to inquiries, send transactional notices (e.g., verification emails, deal updates, application status), and, where you have opted in, marketing communications.</li>
+        <li><strong>Operations &amp; Administration:</strong> To manage real estate, partnership, staffing, and program operations across LVO Holdings' divisions, including compliance with GRO licensing obligations at Cool Living Quarters FC LLC.</li>
+        <li><strong>Security &amp; Fraud Prevention:</strong> To detect, investigate, and prevent unauthorized access, fraud, or abuse of the Services.</li>
+        <li><strong>Analytics &amp; Improvement:</strong> To understand usage patterns, diagnose technical issues, and improve site performance, accessibility, and the motion-sensitivity experience described in Section 06.</li>
+        <li><strong>Legal Compliance:</strong> To comply with applicable law, respond to lawful requests from public authorities, and enforce our Terms of Service.</li>
+        <li><strong>Recruiting:</strong> To evaluate candidates for employment or contractor roles across LVO Holdings and its divisions, including CLQ's licensed staff.</li>
       </ul>
-      <p>These providers process data on our behalf under their own security and privacy commitments. We do not sell personal information to third parties, and we do not share it with advertisers.</p>
+      <p>We do not use information collected through the Services to make solely automated decisions that produce legal or similarly significant effects concerning you without human review.</p>
     </section>
 
-    <section>
-      <h2>5. Cookies &amp; Similar Technologies</h2>
-      <p>Our portals use essential cookies required for authentication (set by Clerk) and, where enabled, privacy-focused analytics (via Cloudflare) to understand aggregate site usage. We do not use third-party advertising trackers.</p>
+    <section id="legal-basis">
+      <h2><span class="num">05</span> Legal Bases for Processing</h2>
+      <p>Where applicable law requires a legal basis for processing, we rely on one or more of the following: your consent; performance of a contract with you (e.g., an employment application, deal engagement, or account terms); our legitimate business interests (e.g., securing our Services, improving performance); and compliance with a legal obligation (e.g., HHSC licensing, tax, and employment-verification requirements).</p>
     </section>
 
-    <section>
-      <h2>6. Data Retention</h2>
-      <p>We retain account information for as long as your portal account remains active, plus a reasonable period afterward to comply with legal, accounting, or security obligations. You may request deletion of your account data as described in Section 7.</p>
+    <section id="cookies">
+      <h2><span class="num">06</span> Cookies &amp; Tracking Technologies</h2>
+      <p>We use cookies, local storage, and similar technologies to operate and improve the Services. Below is a summary of the categories we use.</p>
+      <table class="data-table">
+        <tr><th>Category</th><th>Purpose</th><th>Examples</th></tr>
+        <tr><td>Strictly Necessary</td><td>Required for core site functionality and cannot be disabled without affecting the site</td><td>Session cookies, authentication tokens</td></tr>
+        <tr><td>Preference</td><td>Remembers your choices between visits</td><td><code>lvo_motion_consent</code> — records whether you accepted or declined animated imagery on the motion-sensitivity notice, set for one year on the <code>.wearelvo.com</code> domain</td></tr>
+        <tr><td>Analytics</td><td>Helps us understand aggregate usage and site performance</td><td>Cloudflare Web Analytics identifiers</td></tr>
+        <tr><td>Authentication</td><td>Keeps you securely signed in across division portals</td><td>Identity-provider session and factor-verification cookies</td></tr>
+      </table>
+      <p>You can control non-essential cookies through your browser settings, and you can change your motion/imagery preference at any time using the "Enable Images" / "Disable Images" toggle available on the main site. Blocking strictly necessary cookies may prevent parts of the Services, including sign-in, from functioning correctly.</p>
     </section>
 
-    <section>
-      <h2>7. Your Rights</h2>
-      <p>Depending on your location, you may have the right to access, correct, or request deletion of your personal information, or to object to certain processing. To exercise these rights, contact us using the details in Section 9. We will respond within a reasonable timeframe and may need to verify your identity before acting on a request.</p>
+    <section id="sharing">
+      <h2><span class="num">07</span> How We Share Information</h2>
+      <p>We do not sell your personal information for money. We may share information in the following circumstances:</p>
+      <ul>
+        <li><strong>Within LVO Holdings:</strong> Among LVO Holdings, its divisions (Vindex, Alliance, Operations, Careers), and subsidiaries such as Cool Living Quarters FC LLC, for the purposes described in this Policy.</li>
+        <li><strong>Service Providers:</strong> With vendors who perform services on our behalf, such as hosting, identity verification, email delivery, and analytics, under contractual confidentiality and data-protection obligations. See Section 08.</li>
+        <li><strong>Deal Counterparties:</strong> Within Alliance and Vindex, relevant deal or transaction information may be shared with counterparties, co-investors, lenders, or professional advisors strictly as needed to evaluate or complete a transaction, and generally only after you have expressed interest in that transaction.</li>
+        <li><strong>Regulators &amp; Licensing Bodies:</strong> With HHSC and other regulators as required for CLQ's GRO license and other licensing or compliance obligations.</li>
+        <li><strong>Legal &amp; Safety:</strong> Where required by law, subpoena, or court order, or where we believe disclosure is necessary to protect the rights, property, or safety of LVO Holdings, our users, or others.</li>
+        <li><strong>Business Transfers:</strong> In connection with a merger, acquisition, financing, or sale of assets, subject to standard confidentiality protections.</li>
+      </ul>
     </section>
 
-    <section>
-      <h2>8. Children's Privacy</h2>
-      <p>The Services are not directed to individuals under 18, and we do not knowingly collect personal information from children through these websites. If you believe a child has provided us with personal information, contact us and we will take appropriate steps to remove it.</p>
+    <section id="processors">
+      <h2><span class="num">08</span> Third-Party Service Providers</h2>
+      <p>We rely on a limited set of infrastructure and service providers to operate the Services, including hosting and content-delivery (GitHub Pages and Cloudflare, including Cloudflare Workers and D1 database services), identity and authentication management, transactional email delivery (including SMTP-based sending), and, within certain internal tools, third-party large-language-model infrastructure used to power limited, deal-scoped assistant features inside the Alliance portal. Each provider is contractually restricted from using your information for purposes other than providing services to LVO Holdings, except as required by law.</p>
     </section>
 
-    <section>
-      <h2>9. Contact Us</h2>
-      <p>Questions about this Privacy Policy, or requests regarding your data, can be sent to <a class="inline" href="mailto:privacy@wearelvo.com">privacy@wearelvo.com</a>.</p>
+    <section id="divisions">
+      <h2><span class="num">09</span> Division-Specific Practices</h2>
+      <h3>Vindex (Real Estate)</h3>
+      <p>Vindex may process property, portfolio, and counterparty information in connection with acquisitions, dispositions, and asset management. Public property records may be combined with information you provide for diligence purposes.</p>
+      <h3>Alliance (Partnerships &amp; Capital)</h3>
+      <p>Alliance may collect accreditation, financial, and identity-verification information necessary to evaluate potential partnerships or capital arrangements. Nothing in this Policy, and no feature of the Alliance portal, constitutes an offer to sell or a solicitation of an offer to buy any security.</p>
+      <h3>Operations &amp; Cool Living Quarters FC LLC (GRO)</h3>
+      <p>Cool Living Quarters FC LLC operates as a General Residential Operation licensed by the Texas Health and Human Services Commission (HHSC) under 26 TAC Chapter 748. Information relating to individuals in CLQ's care is subject to heightened confidentiality protections under applicable state licensing and child-welfare regulations, is accessed strictly on a need-to-know basis by authorized, background-checked personnel, and is <strong>not</strong> used for the marketing or analytics purposes described elsewhere in this Policy. Where state or federal program requirements impose stricter or additional obligations, those requirements govern over the general provisions of this Policy for that data.</p>
+      <h3>Careers</h3>
+      <p>Application materials submitted through the Careers portal are used solely for recruiting and hiring purposes across LVO Holdings and its divisions and are retained in accordance with Section 10.</p>
     </section>
 
-    <section>
-      <h2>10. Changes to This Policy</h2>
-      <p>We may update this Privacy Policy periodically. Material changes will be reflected by an updated "Last Updated" date above. We encourage you to review this page occasionally.</p>
+    <section id="retention">
+      <h2><span class="num">10</span> Data Retention</h2>
+      <p>We retain personal information for as long as necessary to fulfill the purposes described in this Policy, unless a longer retention period is required or permitted by law. As general guidance:</p>
+      <ul>
+        <li>Account and authentication data is retained for the life of the account plus a limited period thereafter for security and audit purposes.</li>
+        <li>Application materials submitted via the Careers portal are retained for a reasonable evaluation period and, where permitted, a limited additional period for future opportunities, unless you request earlier deletion.</li>
+        <li>Transaction and deal-related records within Vindex and Alliance are retained in accordance with applicable financial, tax, and recordkeeping requirements.</li>
+        <li>GRO program records maintained by Cool Living Quarters FC LLC are retained in accordance with HHSC licensing and Texas child-welfare recordkeeping requirements, which may exceed the retention periods described elsewhere in this Policy.</li>
+      </ul>
     </section>
-  </main>
 
-  <footer>
-    <a class="footer-link" href="https://wearelvo.com">← wearelvo.com</a>
-    <a class="footer-link" href="terms.html">Terms of Service</a>
-  </footer>
+    <section id="security">
+      <h2><span class="num">11</span> Data Security</h2>
+      <p>We implement administrative, technical, and physical safeguards designed to protect information against unauthorized access, alteration, disclosure, or destruction, including encryption in transit, access controls, credential hashing, and server-side token verification for authenticated portals. No method of transmission or storage is completely secure, and we cannot guarantee absolute security. If we become aware of a security incident affecting your personal information, we will notify affected individuals and any applicable regulators as required by law.</p>
+    </section>
+
+    <section id="rights">
+      <h2><span class="num">12</span> Your Privacy Rights</h2>
+      <p>Depending on your state of residence, you may have some or all of the following rights with respect to your personal information:</p>
+      <ul>
+        <li><strong>Right to Know / Access:</strong> Confirm whether we process your personal information and obtain a copy of it.</li>
+        <li><strong>Right to Correct:</strong> Request correction of inaccurate personal information.</li>
+        <li><strong>Right to Delete:</strong> Request deletion of personal information we hold about you, subject to legal exceptions.</li>
+        <li><strong>Right to Data Portability:</strong> Receive a copy of your personal information in a portable format.</li>
+        <li><strong>Right to Opt Out:</strong> Opt out of the processing of your personal information for targeted advertising, the sale of personal information, or profiling in furtherance of decisions that produce legal or similarly significant effects.</li>
+        <li><strong>Right to Appeal:</strong> Appeal a decision we make regarding your rights request.</li>
+      </ul>
+      <p>To exercise any of these rights, contact us using the details in Section 19. We will verify your request using information associated with your account or prior interactions with us before responding, and we will respond within the timeframe required by applicable law. You will not receive discriminatory treatment for exercising your privacy rights.</p>
+    </section>
+
+    <section id="tdpsa">
+      <h2><span class="num">13</span> Texas Data Privacy &amp; Security Act (TDPSA)</h2>
+      <p>As a Texas-based company, LVO Holdings is committed to honoring the rights set out in the Texas Data Privacy and Security Act (TDPSA), effective July 1, 2024, to the extent it applies to our processing activities. In addition to the rights listed in Section 12, the TDPSA provides that:</p>
+      <ul>
+        <li>We will not process sensitive data (such as precise geolocation, certain demographic characteristics, or health information) without your consent, except as otherwise permitted by law.</li>
+        <li>We provide a reasonably accessible, clear, and meaningful privacy notice — this Policy — describing the categories of personal data processed, the purposes of processing, and how to exercise your rights.</li>
+        <li>Where we engage in "targeted advertising," the "sale" of personal data, or certain profiling activities as those terms are defined by the TDPSA, you have the right to opt out. LVO Holdings does not currently sell personal data or engage in third-party targeted advertising through the Services; if this changes, we will update this Policy and provide an opt-out mechanism.</li>
+        <li>You may designate an authorized agent to submit a rights request on your behalf, subject to verification.</li>
+      </ul>
+      <p>If you disagree with our response to a rights request, you may appeal by contacting us as described in Section 19. If your appeal is denied, you may contact the Texas Attorney General's office.</p>
+    </section>
+
+    <section id="dnt">
+      <h2><span class="num">14</span> Do Not Track &amp; Global Opt-Out Signals</h2>
+      <p>Some browsers offer a "Do Not Track" signal. Because there is not yet a common industry standard for how to interpret this signal, our Services do not currently respond to Do Not Track signals. We will honor recognized universal opt-out mechanisms (such as the Global Privacy Control) where required by applicable law and where technically feasible for the associated processing activity.</p>
+    </section>
+
+    <section id="children">
+      <h2><span class="num">15</span> Children's Privacy</h2>
+      <p>The Services, including our corporate website, Vindex, Alliance, and Careers portals, are not directed to children under 13 (or the applicable minimum age in your jurisdiction), and we do not knowingly collect personal information from children through those Services. If we learn that we have collected personal information from a child in violation of this Policy, we will take steps to delete it.</p>
+      <p>This section does not apply to information collected by Cool Living Quarters FC LLC in its capacity as a licensed General Residential Operation, which is governed by dedicated, program-specific confidentiality and consent protocols under HHSC regulations rather than by this general web Privacy Policy.</p>
+    </section>
+
+    <section id="transfers">
+      <h2><span class="num">16</span> International Users &amp; Data Transfers</h2>
+      <p>The Services are hosted and operated in the United States and are intended primarily for a United States audience. If you access the Services from outside the United States, your information will be transferred to, stored, and processed in the United States, where data protection laws may differ from those of your jurisdiction.</p>
+    </section>
+
+    <section id="thirdparty-links">
+      <h2><span class="num">17</span> Third-Party Links</h2>
+      <p>The Services may contain links to third-party websites or services that are not owned or controlled by LVO Holdings. This Policy does not apply to those third parties, and we encourage you to review their privacy policies before providing them with information.</p>
+    </section>
+
+    <section id="changes">
+      <h2><span class="num">18</span> Changes to This Policy</h2>
+      <p>We may update this Policy from time to time to reflect changes in our practices, technology, legal requirements, or for other operational reasons. We will post the revised Policy with an updated "Last Reviewed" date, and, where changes are material, we will provide additional notice as required by applicable law. Your continued use of the Services after a revised Policy becomes effective constitutes acceptance of the changes.</p>
+    </section>
+
+    <section id="contact">
+      <h2><span class="num">19</span> Contact Us</h2>
+      <p>If you have questions, concerns, or requests regarding this Privacy Policy or our data practices, or if you wish to exercise any of the rights described above, please contact us:</p>
+      <div class="callout">
+        <p><strong>Legion V. Omni-Operation Holdings LLC</strong><br>
+        Attn: Privacy &amp; Data Protection<br>
+        Houston, Texas, United States<br>
+        Email: <a class="inline" href="mailto:Verification@wearelvo.com">Verification@wearelvo.com</a></p>
+      </div>
+      <p>We will make reasonable efforts to respond to verified requests within the time period required by applicable law.</p>
+    </section>
+
+  </article>
 </div>
+
+<footer>
+  <div class="fmark">LVO Holdings · Legion V. Omni-Operations</div>
+  <div class="flinks">
+    <a href="https://wearelvo.com/">Home</a>
+    <a href="https://tos.wearelvo.com">Terms of Service</a>
+    <a href="mailto:Verification@wearelvo.com">Contact</a>
+  </div>
+</footer>
+
 </body>
 </html>
