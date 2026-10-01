@@ -210,7 +210,7 @@ footer .flinks a:hover{ color:var(--white); border-color:var(--red-hi); }
 <header id="hero">
   <div class="eyebrow">Privacy Policy</div>
   <h1>How LVO Holdings Handles Your Information</h1>
-  <div class="meta">Effective <strong>August 28, 2026</strong> &nbsp;·&nbsp; Last Reviewed <strong>September 13, 2026</strong></div>
+  <div class="meta">Effective <strong>July 30, 2026</strong> &nbsp;·&nbsp; Last Reviewed <strong>September 30, 2026</strong></div>
   <div class="rule"></div>
 </header>
 
@@ -246,7 +246,7 @@ footer .flinks a:hover{ color:var(--white); border-color:var(--red-hi); }
     <section id="scope">
       <h2><span class="num">01</span> Scope &amp; Who We Are</h2>
       <p class="lede">This Privacy Policy explains how Legion V. Omni-Operation Holdings LLC, doing business as "LVO Holdings" or "LVO" ("we," "us," "our," or the "Company"), collects, uses, discloses, and safeguards information in connection with our websites, subdomains, applications, and related services (collectively, the "Services").</p>
-      <p>LVO Holdings is a privately held, Texas-based, multi-division operations group organized under the Marts Trust. This Policy applies to <strong>wearelvo.com</strong> and all of its subdomains and division portals, including but not limited to:</p>
+      <p>LVO Holdings is a privately held, Texas-based, multi-division operations group. This Policy applies to <strong>wearelvo.com</strong> and all of its subdomains and division portals, and to LVO Cloud (our shared resource for sign-in, dashboards, status reporting, and LVO Messaging), including the following divisions:</p>
       <div class="division-grid">
         <div class="division-card vindex"><div class="d-name">Vindex</div><p>Real estate operations, portfolio management, and related dashboards.</p></div>
         <div class="division-card alliance"><div class="d-name">Alliance</div><p>Partnerships, capital formation, deal rooms, and investor-facing tools.</p></div>
@@ -264,7 +264,8 @@ footer .flinks a:hover{ color:var(--white); border-color:var(--red-hi); }
       <table class="data-table">
         <tr><th>Category</th><th>Examples</th></tr>
         <tr><td>Identity &amp; Contact Data</td><td>Full name, email address, phone number, mailing address, date of birth (where required for verification)</td></tr>
-        <tr><td>Account Credentials</td><td>Username, password (hashed, never stored in plaintext), authentication tokens managed via our identity provider</td></tr>
+        <tr><td>Account Credentials</td><td>Username, password (hashed, never stored in plaintext), authenticator-app (two-step verification) enrollment data, and session tokens issued by LVO Cloud, our identity and sign-in service</td></tr>
+        <tr><td>Messaging &amp; Collaboration Data</td><td>Messages, direct messages, files, images, voice messages, GIFs, reactions, polls, calendar events, news posts, pinned items, scheduled messages, and your display name, avatar, theme, and custom status (LVO Messaging)</td></tr>
         <tr><td>Professional &amp; Application Data</td><td>Résumés, cover letters, employment history, references, work authorization status (Careers portal)</td></tr>
         <tr><td>Financial &amp; Transactional Data</td><td>Bank routing information, investment amounts, accreditation status, tax identification numbers (Alliance, Vindex — where applicable to a deal or transaction)</td></tr>
         <tr><td>Correspondence</td><td>Messages, inquiries, and attachments submitted via contact forms, email, or in-portal messaging</td></tr>
@@ -276,6 +277,7 @@ footer .flinks a:hover{ color:var(--white); border-color:var(--red-hi); }
         <li><strong>Device &amp; Usage Data:</strong> IP address, browser type and version, operating system, device identifiers, referring/exit pages, pages viewed, time spent, and interaction patterns (e.g., clicks, scroll depth, carousel navigation).</li>
         <li><strong>Log Data:</strong> Server logs maintained by our hosting and edge-network providers, including timestamps and request metadata.</li>
         <li><strong>Cookie &amp; Local Storage Data:</strong> Including the <code>lvo_motion_consent</code> preference cookie, session and authentication cookies, and analytics identifiers. See Section 06.</li>
+        <li><strong>Presence &amp; Activity Data:</strong> In LVO Messaging, your online/idle/offline status, last-seen time, typing indicators, and read receipts, which are visible to other members of the conversations you participate in.</li>
         <li><strong>Approximate Location Data:</strong> Derived from IP address for fraud prevention, analytics, and content localization; we do not collect precise GPS location unless you separately grant permission.</li>
       </ul>
 
@@ -321,7 +323,7 @@ footer .flinks a:hover{ color:var(--white); border-color:var(--red-hi); }
         <tr><td>Strictly Necessary</td><td>Required for core site functionality and cannot be disabled without affecting the site</td><td>Session cookies, authentication tokens</td></tr>
         <tr><td>Preference</td><td>Supports the motion-sensitivity notice shown on each visit</td><td><code>lvo_motion_consent</code> — records your accept/decline choice for animated imagery for the current visit only; it is not retained between visits, so the notice is shown again each time you access the site</td></tr>
         <tr><td>Analytics</td><td>Helps us understand aggregate usage and site performance</td><td>Cloudflare Web Analytics identifiers</td></tr>
-        <tr><td>Authentication</td><td>Keeps you securely signed in across division portals</td><td>Identity-provider session and factor-verification cookies</td></tr>
+        <tr><td>Authentication</td><td>Keeps you securely signed in across division portals</td><td>LVO Cloud session token and two-step verification state. To keep you signed in across portals, the session token is handed between LVO portals in the URL fragment, which browsers do not transmit to web servers.</td></tr>
       </table>
       <p>You can control non-essential cookies through your browser settings, and you can change your motion/imagery preference at any time using the "Enable Images" / "Disable Images" toggle available on the main site. Blocking strictly necessary cookies may prevent parts of the Services, including sign-in, from functioning correctly.</p>
     </section>
@@ -341,7 +343,7 @@ footer .flinks a:hover{ color:var(--white); border-color:var(--red-hi); }
 
     <section id="processors">
       <h2><span class="num">08</span> Third-Party Service Providers</h2>
-      <p>We rely on a limited set of infrastructure and service providers to operate the Services, including hosting and content-delivery (GitHub Pages and Cloudflare, including Cloudflare Workers and D1 database services), identity and authentication management, transactional email delivery (including SMTP-based sending), and, within certain internal tools, third-party large-language-model infrastructure used to power limited, deal-scoped assistant features inside the Alliance portal. Each provider is contractually restricted from using your information for purposes other than providing services to LVO Holdings, except as required by law.</p>
+      <p>We rely on a limited set of infrastructure and service providers to operate the Services, including hosting and content-delivery (GitHub Pages and Cloudflare, including Cloudflare Workers and D1 database services), identity and authentication management (LVO Cloud), transactional email delivery (including SMTP-based sending), and, within certain internal tools, third-party large-language-model infrastructure. This includes limited, deal-scoped assistant features inside the Alliance portal and, in LVO Messaging, Google’s Gemini models, which power the AI chat assistants and the message-translation feature. LVO Messaging also displays GIFs served directly from GIPHY, so when you view a GIF, your browser connects to GIPHY and your IP address and device information are visible to it. Each provider is contractually restricted from using your information for purposes other than providing services to LVO Holdings, except as required by law.</p>
     </section>
 
     <section id="divisions">
@@ -354,6 +356,11 @@ footer .flinks a:hover{ color:var(--white); border-color:var(--red-hi); }
       <p>LVO's Operations division operates a General Residential Operation licensed by the Texas Health and Human Services Commission (HHSC) under 26 TAC Chapter 748. Information relating to individuals in the program's care is subject to heightened confidentiality protections under applicable state licensing and child-welfare regulations, is accessed strictly on a need-to-know basis by authorized, background-checked personnel, and is <strong>not</strong> used for the marketing or analytics purposes described elsewhere in this Policy. Where state or federal program requirements impose stricter or additional obligations, those requirements govern over the general provisions of this Policy for that data.</p>
       <h3>Careers</h3>
       <p>Application materials submitted through the Careers portal are used solely for recruiting and hiring purposes across LVO Holdings and its divisions and are retained in accordance with Section 10.</p>
+
+      <h3>LVO Cloud &amp; Messaging</h3>
+      <p>LVO Messaging is available only to authorized accounts. Messages and attachments are stored on our Cloudflare infrastructure and are visible to the members of the channel or conversation they were posted in. Administrators cannot view messaging content. Access to messaging content is limited to LVO Holdings’ legal team, for legal and compliance purposes.</p>
+      <p><strong>AI assistants and translation:</strong> When you send a direct message to an AI assistant, or mention one in a channel, the assistant sends your message and a limited amount of recent conversation history to Google’s Gemini service to generate a reply. Administrators can configure an assistant to respond to every message in a channel it belongs to, in which case all messages in that channel are sent to the provider. When you use the translation feature, the selected message text is sent to the same provider. The provider processes this information under its own terms. Please do not enter resident or program data, credentials, or other sensitive information into LVO Messaging or its assistants.</p>
+      <p><strong>Status board:</strong> The LVO Cloud status board and service-unavailable pages show the operational status of our services and do not require you to provide personal information. For account recovery or support, contact <a href="mailto:support@wearelvo.com">support@wearelvo.com</a>.</p>
     </section>
 
     <section id="retention">
@@ -361,6 +368,7 @@ footer .flinks a:hover{ color:var(--white); border-color:var(--red-hi); }
       <p>We retain personal information for as long as necessary to fulfill the purposes described in this Policy, unless a longer retention period is required or permitted by law. As general guidance:</p>
       <ul>
         <li>Account and authentication data is retained for the life of the account plus a limited period thereafter for security and audit purposes.</li>
+        <li>Messaging content in LVO Messaging is retained for up to one year, unless you request an export of your chats.</li>
         <li>Application materials submitted via the Careers portal are retained for a reasonable evaluation period and, where permitted, a limited additional period for future opportunities, unless you request earlier deletion.</li>
         <li>Transaction and deal-related records within Vindex and Alliance are retained in accordance with applicable financial, tax, and recordkeeping requirements.</li>
         <li>GRO program records maintained by LVO's Operations division are retained in accordance with HHSC licensing and Texas child-welfare recordkeeping requirements, which may exceed the retention periods described elsewhere in this Policy.</li>
@@ -369,7 +377,7 @@ footer .flinks a:hover{ color:var(--white); border-color:var(--red-hi); }
 
     <section id="security">
       <h2><span class="num">11</span> Data Security</h2>
-      <p>We implement administrative, technical, and physical safeguards designed to protect information against unauthorized access, alteration, disclosure, or destruction, including encryption in transit, access controls, credential hashing, and server-side token verification for authenticated portals. No method of transmission or storage is completely secure, and we cannot guarantee absolute security. If we become aware of a security incident affecting your personal information, we will notify affected individuals and any applicable regulators as required by law.</p>
+      <p>We implement administrative, technical, and physical safeguards designed to protect information against unauthorized access, alteration, disclosure, or destruction, including encryption in transit, access controls, credential hashing, two-step verification (password plus authenticator app) for sign-in, and server-side token verification for authenticated portals. No method of transmission or storage is completely secure, and we cannot guarantee absolute security. If we become aware of a security incident affecting your personal information, we will notify affected individuals and any applicable regulators as required by law.</p>
     </section>
 
     <section id="rights">
@@ -405,7 +413,7 @@ footer .flinks a:hover{ color:var(--white); border-color:var(--red-hi); }
 
     <section id="children">
       <h2><span class="num">15</span> Children's Privacy</h2>
-      <p>The Services, including our corporate website, Vindex, Alliance, and Careers portals, are not directed to children under 13 (or the applicable minimum age in your jurisdiction), and we do not knowingly collect personal information from children through those Services. If we learn that we have collected personal information from a child in violation of this Policy, we will take steps to delete it.</p>
+      <p>The Services, including our corporate website, LVO Cloud, LVO Messaging, and the Vindex, Alliance, and Careers portals, are not directed to children under 13 (or the applicable minimum age in your jurisdiction), and we do not knowingly collect personal information from children through those Services. If we learn that we have collected personal information from a child in violation of this Policy, we will take steps to delete it.</p>
       <p>This section does not apply to information collected through our licensed General Residential Operation program, which is governed by dedicated, program-specific confidentiality and consent protocols under HHSC regulations rather than by this general web Privacy Policy.</p>
     </section>
 
