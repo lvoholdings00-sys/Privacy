@@ -198,6 +198,12 @@ footer .flinks a:hover{ color:var(--white); border-color:var(--red-hi); }
 article code{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:.78em;color:var(--white);word-break:break-all}
 @media(max-width:900px){#layout{grid-template-columns:minmax(0,1fr)}article{min-width:0}}
 @media(max-width:720px){table.data-table{display:block;overflow-x:auto;-webkit-overflow-scrolling:touch}table.data-table th,table.data-table td{min-width:120px}}
+
+@media(min-width:901px){#toc{max-height:calc(100vh - 120px);overflow-y:auto;overscroll-behavior:contain;scrollbar-width:thin;scrollbar-color:rgba(255,255,255,.18) transparent}#toc::-webkit-scrollbar{width:4px}#toc::-webkit-scrollbar-thumb{background:rgba(255,255,255,.18)}}
+article section{scroll-margin-top:100px}
+#toc li a{transition:color .25s}
+#toc li a.active{color:var(--white)}
+#toc li a.active::before{color:var(--white)}
 </style>
 </head>
 <body>
@@ -496,5 +502,29 @@ article code{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;fo
   </div>
 </footer>
 
+<script>
+(function(){
+  var toc=document.getElementById('toc'); if(!toc) return;
+  var links=[].slice.call(toc.querySelectorAll('a')), map={}, secs=[].slice.call(document.querySelectorAll('article section')), cur=null;
+  links.forEach(function(a){ map[a.getAttribute('href').slice(1)]=a; });
+  var calm=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function set(id){
+    if(id===cur) return; cur=id;
+    links.forEach(function(a){ var on=(a===map[id]); a.classList.toggle('active',on); if(on) a.setAttribute('aria-current','true'); else a.removeAttribute('aria-current'); });
+    var a=map[id];
+    if(a && getComputedStyle(toc).position==='sticky'){
+      var t=toc.getBoundingClientRect(), r=a.getBoundingClientRect();
+      if(r.top<t.top+60 || r.bottom>t.bottom-30){ toc.scrollTo({top:toc.scrollTop+(r.top-t.top)-toc.clientHeight/2, behavior:calm?'auto':'smooth'}); }
+    }
+  }
+  function onScroll(){
+    var found=secs[0].id;
+    secs.forEach(function(s){ if(s.getBoundingClientRect().top<=130) found=s.id; });
+    if(window.innerHeight+window.scrollY>=document.documentElement.scrollHeight-4) found=secs[secs.length-1].id;
+    set(found);
+  }
+  addEventListener('scroll',onScroll,{passive:true}); addEventListener('resize',onScroll); onScroll();
+})();
+</script>
 </body>
 </html>
